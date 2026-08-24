@@ -89,7 +89,7 @@ const SITE_CONFIG = {
   website: {
 
     url:
-      "https://sivalakshmi5.github.io/PavanCA/",
+      "https://pavanca.github.io/ca/",
 
     language:
       "en",
