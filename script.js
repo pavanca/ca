@@ -4497,40 +4497,58 @@ document.addEventListener("DOMContentLoaded",()=>{
    FINAL BUILD — SECTION CLEANUP AND LOCKED BEHAVIOUR
 ============================================================== */
 function renderFinalUpdates() {
-  setText("updates-eyebrow", "UPDATES");
-  setText("updates-title", "Latest useful updates.");
-  setText("updates-description", "Important dates, changes and notices — kept short and useful.");
-
+  const section = $("updates");
   const grid = $("updates-grid");
   const empty = $("updates-empty");
+  const config = SITE_CONFIG.sections.updates;
+
+  if (!section || !grid) return;
+
+  // Always keep Updates section visible
+  section.hidden = false;
+  section.removeAttribute("hidden");
+
+  // Use text from config.js
+  setText("updates-eyebrow", config.eyebrow);
+  setText("updates-title", config.title);
+  setText("updates-description", config.description);
+
   const updates = Array.isArray(SITE_CONFIG.featuredUpdates)
     ? SITE_CONFIG.featuredUpdates.slice(0, 3)
     : [];
 
-  if (!grid) return;
-
+  // No updates yet → show empty message
   if (!updates.length) {
-    $("updates")?.removeAttribute("hidden");
-  
     grid.innerHTML = `
       <div class="updates-empty">
-        <p>No updates right now. Check back soon.</p>
+        <strong>${escapeHTML(config.emptyTitle)}</strong>
+        <p>${escapeHTML(config.emptyDescription)}</p>
       </div>
     `;
-  
+
+    if (empty) empty.hidden = true;
+
     return;
   }
 
-  $("updates")?.removeAttribute("hidden");
+  // Updates available
   if (empty) empty.hidden = true;
 
   grid.innerHTML = updates.map(item => `
     <a class="final-update-row" href="${escapeHTML(item.href || "#")}">
-      <span class="final-update-date">${escapeHTML(item.date || "")}</span>
-      <strong>${escapeHTML(item.title || "")}</strong>
+      <span class="final-update-date">
+        ${escapeHTML(item.date || "")}
+      </span>
+
+      <strong>
+        ${escapeHTML(item.title || "")}
+      </strong>
+
       <i data-lucide="arrow-up-right"></i>
     </a>
   `).join("");
+
+  refreshIcons();
 }
 
 function renderFinalFooter() {
