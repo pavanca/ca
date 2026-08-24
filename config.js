@@ -2546,8 +2546,8 @@ function getAppointmentWhatsAppUrl() {
 SITE_CONFIG.navigation = [
   { id: "services", label: "What We Do", href: "#services" },
   { id: "who-we-help", label: "Who We Help", href: "#who-we-help" },
-  { id: "client-experiences", label: "Client Reviews", href: "#client-experiences" },
-  { id: "updates", label: "Updates", href: "#updates" },
+  { id: "client-experiences", label: "What Our Clients Say", href: "#client-experiences" },
+  { id: "updates", label: "Whats New", href: "#updates" },
   { id: "faq", label: "FAQ", href: "#faq" },
   { id: "contact", label: "Contact", href: "#contact" }
 ];
@@ -2626,7 +2626,7 @@ SITE_CONFIG.industries = [
 ];
 
 SITE_CONFIG.sections.advantage = {
-  eyebrow: "OUR ADVANTAGE",
+  eyebrow: "OUR STRENGTH",
   title: "Experience that gives us a wider perspective.",
   description: "Chartered Accountancy is the foundation. Experience across banking, business and technology brings another perspective — helping us look beyond the numbers and better understand what's really going on.",
   journey: [
