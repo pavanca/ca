@@ -2558,6 +2558,7 @@ SITE_CONFIG.navigation = [
   { id: "services", label: "What We Do", href: "#services" },
   { id: "who-we-help", label: "Who We Help", href: "#who-we-help" },
   { id: "client-experiences", label: "What Our Clients Say", href: "#client-experiences" },
+  { id: "our-advantage", label: "Our Strength", href: "#our-advantage" },
   { id: "updates", label: "Whats New", href: "#updates" },
   { id: "faq", label: "FAQ", href: "#faq" },
   { id: "contact", label: "Contact", href: "#contact" }
