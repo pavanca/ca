@@ -4510,7 +4510,14 @@ function renderFinalUpdates() {
   if (!grid) return;
 
   if (!updates.length) {
-    $("updates")?.setAttribute("hidden", "hidden");
+    $("updates")?.removeAttribute("hidden");
+  
+    grid.innerHTML = `
+      <div class="updates-empty">
+        <p>No updates right now. Check back soon.</p>
+      </div>
+    `;
+  
     return;
   }
 
