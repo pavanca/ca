@@ -276,12 +276,23 @@ const SITE_CONFIG = {
         "#who-we-help"
     },
 
+     {
+      id:
+        "client-Experiences",
+
+      label:
+        "What Our Clients Say",
+
+      href:
+        "#client-Experiences"
+    },
+
     {
       id:
         "our-story",
 
       label:
-        "Our Story",
+        "Our Strength",
 
       href:
         "#our-story"
@@ -292,7 +303,7 @@ const SITE_CONFIG = {
         "updates",
 
       label:
-        "Updates",
+        "Whats New",
 
       href:
         "#updates"
